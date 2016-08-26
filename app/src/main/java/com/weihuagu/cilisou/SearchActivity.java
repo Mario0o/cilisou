@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.google.android.gms.ads.*;
 
 public class SearchActivity extends Activity implements AsyncResponse{
+	private AdView mAdView;
+
 	private String keyword=null;
 	private List<CiliInfo> ciliList=new ArrayList<CiliInfo>();
 	private CiliAdapter mAdapter=null;
@@ -21,6 +24,8 @@ public class SearchActivity extends Activity implements AsyncResponse{
 		this.getIntentData();
 		this.initUiResouces();
 		this.getCiliList(this.keyword);
+
+		this.showBanner();
 	}
 	public void getIntentData(){
 		Intent intent=getIntent();
@@ -63,5 +68,49 @@ public class SearchActivity extends Activity implements AsyncResponse{
 		// TODO Auto-generated method stub
 		Toast toast=Toast.makeText(this, "接受数据失败了", Toast.LENGTH_SHORT); 
 		toast.show();     
+	}
+
+	//ad
+	/** Called when leaving the activity */
+	@Override
+	public void onPause() {
+		if (mAdView != null) {
+			mAdView.pause();
+		}
+		super.onPause();
+	}
+
+	/** Called when returning to the activity */
+	@Override
+	public void onResume() {
+		super.onResume();
+		if (mAdView != null) {
+			mAdView.resume();
+		}
+	}
+
+	/** Called before the activity is destroyed */
+	@Override
+	public void onDestroy() {
+		if (mAdView != null) {
+			mAdView.destroy();
+		}
+		super.onDestroy();
+	}
+
+	public void showBanner(){
+
+		// Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in
+		// values/strings.xml.
+		mAdView = (AdView) findViewById(R.id.ad_view);
+
+		// Create an ad request. Check your logcat output for the hashed device ID to
+		// get test ads on a physical device. e.g.
+		// "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
+		AdRequest adRequest =new AdRequest.Builder().build();
+		mAdView.setAdListener(new AdListener());
+
+		// Start loading the ad in the background.
+		mAdView.loadAd(adRequest);
 	}
 }

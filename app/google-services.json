@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "550124768308",
+    "project_id": "firebase-cilisou"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550124768308:android:82a48febb7dbc6bc",
+        "android_client_info": {
+          "package_name": "com.weihuagu.cilisou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "550124768308-7n5i0tmqk59rjdjf1ftad79jlaagdqjo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.weihuagu.cilisou",
+            "certificate_hash": "8E0C5801EE96AE6797B9F4656AC9B29CEC7F5054"
+          }
+        },
+        {
+          "client_id": "550124768308-1csfbnhlb1j80q4fj4q7p1phqqkqlquc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbPW7EmGCN1vW2UitdAMJaHoiBfQNeJk0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

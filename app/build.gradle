@@ -25,4 +25,7 @@ android {
 dependencies {
     compile files('libs/jsoup-1.9.2.jar')
     compile group:'junit',name:'junit',version:'4.0'
+    compile group:'com.google.android.gms',name:'play-services-ads',version:'+'
+
+
 }
